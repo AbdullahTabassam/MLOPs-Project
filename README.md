@@ -25,7 +25,7 @@ enterprise_machine_learning
 ```
 
 Open a command prompt in the 'enterprise_machine_learning' folder inside 'Pull_from_hub' and run 'docker compose up' in case of compose V2 and if you have compose V1 run 'docker-compose up'. Docker will pull the tf2 serving image and flask app image from the hub and copy the saved model in the container volume specified in the compose file.
-###### When you successfully build your image in the build from scratch part, you can upload it to Docker Hub and later put the name of your image in the composefile at the marked place to make it work. This step is an additional step to make the project more scalable reproducable. Morwe on uploading to docker <a href='https://www.techrepublic.com/article/how-to-build-a-docker-image-and-upload-it-to-docker-hub/'>here</a>.
+###### When you successfully build your image in the build from scratch part, you can upload it to Docker Hub and later put the name of your image in the composefile at the marked place to make it work. This step is an additional step to make the project more scalable reproducable. More on uploading to docker <a href='https://www.techrepublic.com/article/how-to-build-a-docker-image-and-upload-it-to-docker-hub/'>here</a>.
 
 ## To Build from Scratch
 
