@@ -1,0 +1,77 @@
+<!-- This is the template file which is applied to all other HTML files in this project -->
+<!-- Boiler plate code for the HTML file -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Link the file to the styles.css file -->
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" />
+    <!-- A title block will be used to add title to all files using Jinja 2 formating -->
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Nav bar will have multiple blocks to show various links and buttons on different webpages -->
+    <div class="navbar">
+      <div class="logo">{% block logo %}{% endblock %}</div>
+      <ul class="links">
+        <li>
+          {% block Home %}{% endblock %}
+        </li>
+        <li>
+          <a href="{{url_for('About')}}">About</a>
+        </li>
+        <li>
+          <a href="{{url_for('Contact')}}">Contact</a>
+        </li>
+        <li>
+          {% block feedback %}{% endblock %}
+        </li>
+      </ul>
+      <div class="top_btns">
+        {% block GB_btn %}{% endblock %}
+      </div>
+
+      <div class="toggle_btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+    <div class="dropdown_menu">
+      <li>
+        <a href="{{url_for('index')}}">Home</a>
+      </li>
+      <li>
+        <a href="{{url_for('About')}}">About</a>
+      </li>
+      <li>
+        <a href="{{url_for('Contact')}}">Contact</a>
+      </li>
+      <li>
+        {% block drop_feedback %}{% endblock %}
+      </li>
+      {% block dropdown%}{% endblock%}
+    </div>
+  </head>
+  <body>
+    <!-- The main block will contain the main body of the respective html file -->
+    <main>{% block main %}{% endblock %}</main>
+    <script>
+      const toggleBtn = document.querySelector(".toggle_btn");
+      const toggleBtnIcon = document.querySelector(".toggle_btn i");
+      const dropDownMenu = document.querySelector(".dropdown_menu");
+      toggleBtn.onclick = function () {
+        dropDownMenu.classList.toggle("open");
+        const isOpen = dropDownMenu.classList.contains("open");
+        toggleBtnIcon.classList = isOpen
+          ? "fa-solid fa-xmark"
+          : "fa-solid fa-bars";
+      };
+    </script>
+  </body>
+</html>
