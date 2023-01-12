@@ -1,0 +1,43 @@
+<!-- Extection to the template.html file -->
+{% extends "template.html" %}
+
+<!-- Title Block -->
+{% block title %}Homepage{% endblock %}
+
+<!-- Link to home page -->
+{% block logo %}<a href="{{url_for('index')}}">DetectX</a>{% endblock %} {%
+block Home %}<a href="{{url_for('index')}}">Home</a>{% endblock %}
+
+
+{% block GB_btn %}
+<!-- Register Button in Navbar-->
+<a href="{{url_for('Register')}}" class="action_btn">Register </a>
+
+<!-- Login Button in Navbar-->
+<a href="{{url_for('Login')}}" class="action_btn">Login </a>
+{% endblock %}
+
+<!-- Register button in Dropdown Block (smartphone mode) -->
+{% block dropdown%}
+<li>
+  <a href="{{url_for('Register')}}" class="action_btn">Register</a>
+</li>
+<li>
+  <a href="{{url_for('Login')}}" class="action_btn">Login </a>  
+
+</li>
+{% endblock%}
+
+<!-- Main Block -->
+{% block main %}
+<section id="Home">
+  <h1>Welcome</h1>
+  <p>
+    <br />Curious about the power of AI for object detection? <br /><br />
+    The tool that you have been looking for<br />is just one click away.
+    <br /><br /><br />
+    Press Register and join the comunity.
+  </p>
+</section>
+
+{% endblock %}
