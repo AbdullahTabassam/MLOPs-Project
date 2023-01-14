@@ -1,0 +1,33 @@
+<!-- Extection to the template.html file -->
+{% extends "template.html" %}
+
+<!-- Title Block -->
+{% block title %}DetectX - About Us{% endblock %}
+
+<!-- Link to home page -->
+{% block logo %}<a href="{{url_for('index')}}">DetectX</a>{% endblock %}
+
+{% block Home %}<a href="{{url_for('index')}}">Home</a>{% endblock %}
+
+<!-- Main Block -->
+{% block main %}
+<section id="Home">
+  <h1>About us</h1>
+  <p>
+    <br />
+    Welcome to DetectX, the premier object detection service. <br />
+    Our mission is to provide cutting-edge technlogy that helps our users
+    quickly and accurately identify objects in images.
+    <br /><br /><br />
+    At our object detection service, we have a simple mission: to help you see
+    what you can't. <br />
+    Our cutting-edge technology and dedicated team work tirelessly to ensure
+    that every object in your images or videos is accurately identified and
+    tracked. <br />
+    Whether you're looking to enhance your security, improve your marketing
+    analytics, or simply satisfy your curiosity, we've got you covered.
+    <br /><br /><br />
+    Let us show you the power of truly seeing.
+  </p>
+</section>
+{% endblock %}
