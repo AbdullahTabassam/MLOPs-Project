@@ -1,0 +1,29 @@
+<!-- Extection to the template.html file -->
+{% extends "template.html" %}
+
+<!-- Title Block -->
+{% block title %}DetectX - Contact Us{% endblock %}
+
+<!-- Link to home page -->
+{% block logo %}<a href="{{url_for('index')}}">DetectX</a>{% endblock %}
+
+{% block Home %}<a href="{{url_for('index')}}">Home</a>{% endblock %}
+<!-- Main Block -->
+{% block main %}
+<section id="Home">
+  <h1>Contact us</h1>
+  <p>
+    <br />
+    We are always here when you need us.
+    <br /><br /><br />
+    Contact us at: <br />
+    +44-xxx-xxxxxx <br />
+    <br />
+    or <br /><br />
+    Email us at: <br />
+    helpdesk@xyzmail.com
+    <br /><br /><br />
+    If you need to login click<a href="{{url_for('Login')}}">here</a>
+  </p>
+</section>
+{% endblock %}
