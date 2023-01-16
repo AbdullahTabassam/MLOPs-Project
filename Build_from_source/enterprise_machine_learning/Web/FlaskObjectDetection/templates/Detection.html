@@ -1,0 +1,46 @@
+<!-- Extection to the template.html file -->
+{% extends "template.html" %}
+
+<!-- Title Block -->
+{% block title %}DetectX - Detections{% endblock %}
+
+{% block Home %}<a href="{{url_for('home')}}">Home</a>{% endblock %}
+
+<!-- Link to home page -->
+{% block logo %}<a href="{{url_for('home')}}">DetectX</a>{% endblock %}
+
+<!-- To get Feedback tab in nav bar -->
+{% block feedback %}<a href="{{url_for('Feedback')}}">Feedback</a>{% endblock %}
+
+<!-- To get Feedback in dropdown menu (smartphone mode) -->
+{% block drop_feedback %}<a href="{{url_for('Feedback')}}">Feedback</a>{% endblock %}
+
+{% block GB_btn %}
+
+<!-- Logout Button Block -->
+<a href="{{url_for('Logout')}}" class="action_btn">Logout </a>
+
+{% endblock %} {% block dropdown%}
+<!-- Logout Button in dropdown -->
+<a href="{{url_for('Logout')}}" class="action_btn">Logout </a>{% endblock%}
+
+
+<!-- Main Block -->
+{% block main %}
+<section id="Home">
+  <h1>Your Classified Image</h1>
+  <h5>Predictions for: {{filename}}</h5>
+  <br />
+
+      <div class="container">
+        <div class="image">
+          <img src="{{url_for('static', filename='/detection/'+filename)}}" alt="Image" />
+        </div>
+        <div class="table">
+          
+          {{dataframe | safe}}
+        </div>
+      </div>
+    
+</section>
+{% endblock %}
