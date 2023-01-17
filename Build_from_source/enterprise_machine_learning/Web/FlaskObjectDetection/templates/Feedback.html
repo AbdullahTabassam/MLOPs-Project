@@ -1,0 +1,44 @@
+<!-- Extection to the template.html file -->
+{% extends "template.html" %}
+
+<!-- Title Block -->
+{% block title %}DetectX - Feedback{% endblock %}
+
+{% block Home %}<a href="{{url_for('home')}}">Home</a>{% endblock %}
+
+<!-- Link to home page -->
+{% block logo %}<a href="{{url_for('home')}}">DetectX</a>{% endblock %}
+
+{% block GB_btn %}
+
+<!-- Logout Button Block -->
+<a href="{{url_for('Logout')}}" class="action_btn">Logout </a>
+
+{% endblock %} {% block dropdown%}
+<!-- Logout Button in dropdown -->
+<a href="{{url_for('Logout')}}" class="action_btn">Logout </a>{% endblock%}
+<!-- Main Block -->
+{% block main %}
+<section id="Home">
+  <div>
+    <h1>Feedback</h1>
+    <br />
+    <p>
+      You opinion is important to us. Send us feedback. <br />
+      <br />
+      Provide your valuable feedback and we will make sure we get back to you.
+      <br /><br />
+    </p>
+
+    <form action="/Feedback" method="post">
+        <br />
+        Write your feedback here:
+      </p>
+      <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br>
+      <br /><br />
+
+      <button type="submit" value="Register" class="action_btn">Send</button>
+    </form>
+  </div>
+</section>
+{% endblock %}
