@@ -1,0 +1,55 @@
+<!-- Extection to the template.html file -->
+{% extends "template.html" %}
+
+<!-- Title Block -->
+{% block title %}DetectX - Get Started{% endblock %}
+
+<!-- Link to home page -->
+{% block logo %}<a href="{{url_for('home')}}">DetectX</a>{% endblock %} {% block
+Home %}<a href="{{url_for('home')}}">Home</a>{% endblock %}
+
+<!-- To get Feedback tab in nav bar -->
+{% block feedback %}<a href="{{url_for('Feedback')}}">Feedback</a>{% endblock %}
+
+<!-- To get Feedback in dropdown menu (smartphone mode) -->
+{% block drop_feedback %}<a href="{{url_for('Feedback')}}">Feedback</a>{%
+endblock %} {% block GB_btn %}
+
+<!-- Logout Button Block -->
+<a href="{{url_for('Logout')}}" class="action_btn">Logout </a>
+
+{% endblock %} {% block dropdown%}
+<!-- Logout Button Block -->
+<a href="{{url_for('Logout')}}" class="action_btn">  Logout  </a>{% endblock%}
+<!-- Main Block -->
+{% block main %}
+<section id="upload">
+  <h1>Upload Image</h1>
+  <p>
+    <br />
+    Please upload your image to get detections.<br />To upload you image, choose
+    a file and press the Upload button.
+  </p>
+  <br />
+  <div>
+    <form action="upload" method="post" enctype="multipart/form-data">
+      <div class="row">
+        <div class="col-lg-4">
+          <input
+            type="file"
+            name="file"
+            id="inputFile1"
+            class="choose_btn"
+          /><br /><br />
+          <input type="submit" class="action_btn" value="upload" />
+        </div>
+        <div class="col-lg-8"><img id="iamgen" /><br /></div>
+      </div>
+    </form>
+  </div>
+  <!-- Show the flash message -->
+  {% for message in get_flashed_messages() %}
+  <div class="flash-alert">{{message}}</div>
+  {% endfor %}
+</section>
+{% endblock %}
