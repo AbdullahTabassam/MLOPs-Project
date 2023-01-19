@@ -1,0 +1,63 @@
+<!-- Extection to the template.html file -->
+{% extends "template.html" %}
+
+<!-- Title Block -->
+{% block title %}DetectX - Login{% endblock %}
+
+<!-- Link to home page -->
+{% block logo %}<a href="{{url_for('index')}}">DetectX</a>{% endblock %}
+
+{% block Home %}<a href="{{url_for('index')}}">Home</a>{% endblock %}
+
+<!-- Register Button Block -->
+{% block GB_btn %}<a href="{{url_for('Register')}}" class="action_btn">Register</a>{% endblock %}
+
+<!-- Register in Dropdown Block -->
+{% block dropdown%}
+<li>
+  <a href="{{url_for('Register')}}" class="action_btn">Register</a>
+</li>
+{% endblock%}
+
+<!-- Main Block -->
+{% block main %}
+        <section id="Home">
+            <div>
+              <br /><br />
+            </p>
+            <form action="/Login" method="post">
+                <br><br>
+                <h1>Login</h1>
+                <br />
+                <p>
+                  Provide your Email and Password to login. <br /><br><br>
+
+              <input
+                type="Email"
+                name="Email"
+                class="inpt"
+                placeholder="Email Address"
+                required
+              />
+              <br /><br />
+              <input
+                type="Password"
+                name="password"
+                placeholder="Password"
+                class="inpt"
+                required
+              />
+              <br /><br />
+
+              <button type="submit" class="action_btn">Login</button>
+              <br><br><br><p>Don't have an account? Register<a href="{{url_for('Register')}}">here</a></p>
+            </form>
+
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <!-- Show the flash message -->
+        {% for message in get_flashed_messages() %}
+        <div class="flash-alert">{{message}}</div>
+        {% endfor %}
+          </section>
+    </main>
+    {% endblock %}
