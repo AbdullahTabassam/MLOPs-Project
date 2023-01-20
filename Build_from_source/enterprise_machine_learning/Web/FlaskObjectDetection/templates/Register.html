@@ -1,0 +1,107 @@
+<!-- Extection to the template.html file -->
+{% extends "template.html" %}
+
+<!-- Title Block -->
+{% block title %}DetectX - Register{% endblock %}
+
+<!-- Link to home page -->
+{% block logo %}<a href="{{url_for('index')}}">DetectX</a>{% endblock %}
+
+{% block Home %}<a href="{{url_for('index')}}">Home</a>{% endblock %}
+
+<!-- Login Button Block -->
+{% block GB_btn %}<a href="{{url_for('Login')}}" class="action_btn"> Login  </a>{% endblock %}
+
+<!-- Login in Dropdown Block -->
+{% block dropdown%}
+<li>
+  <a href="{{url_for('Login')}}" class="action_btn"> Login </a>
+</li>
+{% endblock%}
+
+<!-- Main Block -->
+{% block main %}
+        <section id="Home"> 
+            <div>
+              <br />
+            </p>
+            <form action="/Register" method="post">
+                <br><br>
+                <h1>Register </h1>
+                <br />
+                <p>
+                  Provide your details to register.<br /><br>
+
+              <input
+                type="text"
+                name="First_name"
+                class="inpt"
+                placeholder="First Name"
+                required
+              />   
+              <input
+                type="text"
+                name="Last_name"
+                class="inpt"
+                placeholder="Last Name"
+                required
+              />               
+              <br><br> 
+
+              <p>What is your Date of birth?</p>
+              <br />
+              <label for="age">Date of birth:</label>
+              <input
+                type="date"
+                id="age"
+                name="age_verification"
+                min="1950-01-01"
+                max="2023-12-31"
+                />
+              
+              <br><br> 
+                            
+              <input
+                type="Email"
+                name="u_Email"
+                class="inpt"
+                placeholder="Email Address"
+                required
+              />
+              <input
+              type="Email"
+              name="re_Email"
+              class="inpt"
+              placeholder="Re-write Email Address"
+              required
+            />
+
+              <br /><br />
+              <input
+                type="Password"
+                name="u_password"
+                placeholder="Password"
+                class="inpt"
+                required
+              />
+              <input
+                type="Password"
+                name="re_password"
+                placeholder="Re-write Password"
+                class="inpt"
+                required
+              />
+              <br><br>  <br><br>  
+              <button type="submit" class="action_btn">Register</button>              
+              <br><br><p>Alreday have an account? login<a href="{{url_for('Login')}}">here</a></p>
+            </form>
+
+        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <!-- Show the flash message -->
+        {% for message in get_flashed_messages() %}
+        <div class="flash-alert">{{message}}</div>
+        {% endfor %}
+          </section>
+    </main>
+    {% endblock %}
