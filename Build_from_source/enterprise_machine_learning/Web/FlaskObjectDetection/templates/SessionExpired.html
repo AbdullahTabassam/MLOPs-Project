@@ -1,0 +1,31 @@
+<!-- Extection to the template.html file -->
+{% extends "template.html" %}
+
+<!-- Title Block -->
+{% block title %}DetectX - Thank You{% endblock %}
+
+<!-- Link to home page -->
+{% block logo %}<a href="{{url_for('home')}}">DetectX</a>{% endblock %}
+
+{% block Home %}<a href="{{url_for('home')}}">Home</a>{% endblock %}
+
+{% block GB_btn %}
+
+
+{% endblock %}
+
+
+<!-- Main Block -->
+{% block main %}
+<section id="Home">
+  <h1>Session Expired</h1>
+  <p>
+    <br />
+    Your session has expired.
+    <br />
+    Plese login again to make more detections.
+    <br /><br /><br />
+    <a href="{{url_for('Login')}}" class="action_btn">Login</a>
+  </p>
+</section>
+{% endblock %}
