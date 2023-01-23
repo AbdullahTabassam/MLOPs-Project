@@ -1,0 +1,340 @@
+/* This sets default styles for all elements in the HTML document. */
+* {
+  margin: 5px;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* This sets the background gradient color for the body element. */
+body {
+  background: #360033; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #0b8793,
+    #360033
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #0b8793,
+    #360033
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100vh;
+}
+
+/* This removes the bullet points from all list items. */
+li {
+  list-style: none;
+}
+
+/* This sets the default link styles for anchor tags. */
+a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* This changes the link color on hover. */
+a:hover {
+  color: rgb(140, 0, 255);
+}
+
+/* This sets the padding for the header element. */
+header {
+  position: relative;
+  padding: 0 2rem;
+}
+
+/* This styles the navbar. */
+.navbar {
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* This styles the logo in the navbar. */
+.navbar .logo a {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+/* This styles the links in the navbar. */
+.navbar .links {
+  display: flex;
+  gap: 2rem;
+}
+
+/* This styles the toggle button in the navbar. */
+.navbar .toggle_btn {
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* This styles the action button. */
+.action_btn {
+  background-color: rgb(140, 0, 255);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: scale 0.2 ease;
+}
+
+/* This scales up the action button on hover. */
+.action_btn:hover {
+  scale: 1.05;
+  color: #fff;
+}
+
+/* This scales down the action button on active state. */
+.action_btn:active {
+  scale: 0.95;
+}
+
+/* This styles the dropdown menu. */
+.dropdown_menu {
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 60px;
+  height: 0px;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Sets the bottom margin of elements with class "top_btns" to 0.5em */
+.top_btns {
+  margin-bottom: 0.5em;
+}
+
+/* When the dropdown menu has the class "open", sets its height to 360 pixels */
+.dropdown_menu.open {
+  height: 360px;
+}
+
+/* Sets the padding of all list items within elements with class "dropdown_menu" to 0.7rem */
+/* Also, aligns the items vertically and horizontally to the center using flexbox */
+.dropdown_menu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* This styles the buttons in the dropdown menu. */
+.dropdown_menu .action_btn {
+  width: auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* This styles the Homepage*/
+section#Home {
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+/* This styles the Upload page*/
+section#upload {
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+/* This styles the element with id "age" */
+#age {
+  background: rgb(140 0 255 / 30%);
+  padding: 3px;
+  border-radius: 50px;
+}
+/* This styles the elements with class "choose_btn" */
+.choose_btn {
+  background: rgb(140 0 255 / 30%);
+  border-radius: 50px;
+  box-shadow: 5px 5px 10px black;
+  width: 350px;
+  outline: none;
+  cursor: pointer;
+}
+/* This styles the file upload button (a pseudo-element) */
+::-webkit-file-upload-button {
+  color: #fff;
+  background: rgb(140, 0, 255);
+  padding: 7px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 1px 0 1px 1px black;
+  outline: none;
+  cursor: pointer;
+}
+/* This styles the Feedback box*/
+#feedback {
+  height: 120px;
+  width: 350px;
+  background: rgb(140 0 255 / 30%);
+  border-radius: 50px;
+  box-shadow: 5px 5px 10px black;
+  padding: 30px;
+}
+
+/* Container to hold the image and the table to show predictions */
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    margin: 15px auto;
+    background-color: rgba(140, 0, 255, 0.25);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Style for the image section in the container */
+  .image {
+    flex: 7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Style for image in the image section */
+  .image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  /* Styles for the table section in the container */
+  .table {
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Styles for the table in the table section */
+  table {
+    border-collapse: collapse;
+    width: 80%;
+    text-align: left;
+  }
+  
+  /* Style for the group header */
+  thead {
+    background: linear-gradient(to right, #4CAF50, #008CBA);
+    color: white;
+  }
+  
+  /* Styles for table head cells */
+  th {
+    background-color: #7B2892B0;;
+    color: white;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Styles for table data cells */
+  td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+    color: black;
+  }
+  
+  /* style the place holder in the forms to have white color */
+  ::placeholder{/* Chrome, firefox, opera, safari*/
+    color: #fff;
+    opacity: 1;
+  }
+  :-ms-input-placeholder{/*Internt Explorer*/
+    color: #fff;
+  }
+  ::-ms-input-placeholder{/*MS Edge*/
+    color: #fff;
+  }
+  
+  /* Styling the detect id */
+  .detect {
+    width: 500px;
+    height: 500px;
+  }
+  
+  /* style the img */
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  /* Styling the inpt id */
+  .inpt {
+    background: rgb(140 0 255 / 30%);
+    border-radius: 50px;
+    box-shadow: 5px 5px 10px black;
+    width: 220px;
+    height: 25px;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    /* Responsive navbar*/
+  }
+  
+  /* Style the flash message */
+  .flash-alert {
+    position: fixed;
+    top: 580px;
+    left: 530px;
+    right: 530px;
+    bottom: 160px;
+    background-color: #b99ae45e; /* semi-transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* ensure it's above all other elements */
+    border-radius: 50px;
+  }
+  
+  /* This media rule hides the navigation links and action button and shows the toggle button
+     and dropdown menu on different screens */
+  @media (max-width: 992px) {
+    .navbar .links,
+    .navbar .action_btn {
+      display: none;
+    }
+    .navbar .toggle_btn {
+      display: block;
+    }
+    .dropdown_menu {
+      display: block;
+    }
+  }
+  
+  /* Media rule to adjust dropdown menu for different screens */
+  @media (max-width: 576px) {
+    .dropdown_menu {
+      left: 2rem;
+      width: unset;
+    }
+  }
+  
