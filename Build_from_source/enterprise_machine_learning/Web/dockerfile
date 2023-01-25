@@ -1,0 +1,48 @@
+# This is a multi-stage docker file. It has two stages.
+# The first stage (build-stage) will create an intermediate image, which will copy the flask app and install the dependencies.
+# The second stage (runtime-stage) will create a smaller image by copying the libraries and flask app to this image.
+# Multi-stage docker file reduces the size to a great extent. 
+
+# Build stage
+
+# Base image is python 3.7 that is on a light weight linux platform
+FROM python:3.7 AS build-stage 
+
+# Set the work directory
+WORKDIR /app
+
+# Add project
+ADD FlaskObjectDetection /app/FlaskObjectDetection
+
+# Download and install dependencies (Using RUN only once reduces layers and saves memory)
+RUN apt-get update && \
+    apt-get install --no-install-recommends -y ffmpeg libsm6 libxext6 && \
+    pip install --no-cache-dir --disable-pip-version-check Flask tensorflow tensorflow-serving-api mysqlclient Flask_mysqldb numpy Pillow matplotlib grpcio pandas protobuf==3.20.*
+
+# '--no-install-recommends' in apt-get command stops recommended installations and installs only specified libraries saving memory
+# '--no-cache-dir' with pip command stops the cache directories to be downloaded saving memory
+# '--disable-pip-version-check' with pip command stops the console to check the version of pip, saving time.
+
+
+# Runtime stage
+
+# Base image is python 3.7 that is on a light weight linux platform. To save more memory, we could have used python:3.7-slim aswell.
+FROM python:3.7 AS runtime-stage
+
+# Set the work directory
+WORKDIR /app
+
+# Copy the site packages from build image to run time image
+COPY --from=build-stage /usr/local/lib/python3.7/site-packages /usr/local/lib/python3.7/site-packages
+
+# copy the flask app from build image to runtime image
+COPY --from=build-stage /app/FlaskObjectDetection /app/FlaskObjectDetection
+
+# Set environment variables
+# PYTHONUNBUFFERED=1 lets the output display immediately instead of storing it in a buffer with takes more time.
+ENV PYTHONUNBUFFERED=1
+
+# Tell the image what to do when it starts as container
+WORKDIR /app/FlaskObjectDetection
+# in command promt run the flask app.py
+CMD ["python", "./app.py"]
