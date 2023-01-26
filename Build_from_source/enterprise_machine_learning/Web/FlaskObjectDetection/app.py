@@ -48,11 +48,11 @@ app.config['UPLOAD_FOLDER'] = 'uploads/'
 # file extensions allowed to upload
 app.config['ALLOWED_EXTENSIONS'] = set(['png', 'jpg', 'jpeg'])
 
-# MYSQL database config.  Goto https://www.phpmyadmin.co/ to view the database.
-app.config['MYSQL_HOST'] = 'sql8.freemysqlhosting.net'
-app.config['MYSQL_USER'] = 'sql8611078'
-app.config['MYSQL_PASSWORD'] = 'Nca6eBAjsk'
-app.config['MYSQL_DB'] = 'sql8611078'
+# MYSQL database config.  Add you database.
+app.config['MYSQL_HOST'] = ''
+app.config['MYSQL_USER'] = ''
+app.config['MYSQL_PASSWORD'] = ''
+app.config['MYSQL_DB'] = ''
 
 mysql = MySQL(app)
 
