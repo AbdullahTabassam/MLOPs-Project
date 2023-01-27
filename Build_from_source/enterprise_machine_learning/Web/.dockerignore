@@ -1,0 +1,38 @@
+# Exclude Python bytecode files
+*.pyc
+
+# Exclude directories used for testing
+tests/
+test/
+__pycache__/
+.cache
+*.env
+# Exclude documentation files
+README.md
+LICENSE
+docs/
+doc/
+man/
+*.md
+
+# Exclude example files
+examples/
+example/
+sample/
+samples/
+
+# Exclude development files and directories
+.git/
+.gitignore
+*.log
+*.bak
+*.swp
+.DS_Store
+*.sln
+*.suo
+*.pb
+
+# Exclude package manager files and directories
+node_modules/
+bower_components/
+packages/
