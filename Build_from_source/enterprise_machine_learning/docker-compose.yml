@@ -1,0 +1,27 @@
+# The version of docker compose file
+version: '3.8'
+
+# The services that we are going to run in the same file (2 in this case)
+services:
+
+  # Service 1: Flask app, containg all the python, CSS and HTML files
+  web:
+
+    build: ./Web                # Look for a dockerfile at this location
+    container_name: flask_app   # Container name
+    ports:
+      - 5000:5000               # Map port 5000 of 'flask_app' container to port 5000 of Host machine.
+
+  # Service 2: TF2 serving
+  serving:
+
+    image: tensorflow/serving:latest-gpu        # Pull TF2-serving image from Docker Hub
+    container_name: DetectX                     # Container name
+    ports:
+      - 8500:8500                               # Map port 8500 of 'DetectX' container to port 8500 of Host machine.
+    depends_on:
+      - web                                     # This container depends on web service
+    environment:
+      - MODEL_NAME=serving                      # Model to be served, same as mentioned in flask app.py
+    volumes:                                    # Copy saved_model folder to the serving folder in TF2-serving container
+      - ./Web/saved_model:/models/serving # Replace 'path_to_svaed_model_folder' to the path on your device
