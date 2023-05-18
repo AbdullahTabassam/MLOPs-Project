@@ -162,3 +162,18 @@ To run this project you need to have Docker and Docker-compose installed in your
 To clone this repository use this command:
 
     git clone https://github.com/AbdullahTabassam/MLOPs-Project
+# 
+# Screenshots (See '/Screenshots' for all the web pages):
+## Detections
+### Detection 1:
+###
+![Detection 1: Bicycle](Screenshots\Detection_1.jpg)
+### Detection 2:
+###
+![Detection 2: Cat](Screenshots\Detection_2.jpg)
+### Detection 3:
+###
+![Detection 3: Bird](Screenshots\Detection_3.jpg)
+### Database:
+###
+![Detections DB](Screenshots\detections_table-phpmyadmin.jpg)
