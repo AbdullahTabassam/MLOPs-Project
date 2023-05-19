@@ -167,13 +167,13 @@ To clone this repository use this command:
 ## Detections
 ### Detection 1:
 ###
-![Detection 1: Bicycle](Screenshots\Detection_1.jpg)
+![Detection 1: Bicycle](Screenshots/Detection_1.jpg)
 ### Detection 2:
 ###
-![Detection 2: Cat](Screenshots\Detection_2.jpg)
+![Detection 2: Cat](Screenshots/Detection_2.jpg)
 ### Detection 3:
 ###
-![Detection 3: Bird](Screenshots\Detection_3.jpg)
+![Detection 3: Bird](Screenshots/Detection_3.jpg)
 ### Database:
 ###
-![Detections DB](Screenshots\detections_table-phpmyadmin.jpg)
+![Detections DB](Screenshots/detections_table-phpmyadmin.jpg)
